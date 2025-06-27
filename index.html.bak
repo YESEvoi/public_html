@@ -27,6 +27,12 @@
             projects to see all the stuff I work on, or you can check out the
             bread hub to view different kinds of bread! </p>
           <p> Thanks for checking out my site! </p>
+          <p style="text-align: left;">&nbsp;<img src="images/food.jpg" alt="sourdough bread picture"
+              style="width: 173px; height: 229px;"></p>
+          <p style="text-align: left;">&nbsp;<img src="images/pluto.jpg" alt="sourdough bread picture"
+              style="width: 302px; height: 221px;"></p>
+          <p style="text-align: left;">&nbsp;<img src="images/violin.png" alt="sourdough bread picture"
+              style="width: 304px; height: 228px;"></p>
           <!-- end of content column: put your content above this line --> </div>
       </div>
       <div id="tswsidecol" style="background-color: #044b8d;">

@@ -2,39 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nate &amp; Prof Loi</title>
+    <title>weather.html</title>
     <link rel="stylesheet" href="weather.css">
 </head>
-<body>    <div id="dev-controls">
+<body>
+    <div id="weather-ticker">
+        <div id="ticker-content"></div>
+      </div>
+      
+    <!-- Input Controls -->
+    <div id="dev-controls">
         <div class="controls">
-            <input id="location-input" type="text" placeholder="Enter city name (e.g., Worcester, Boston, London)" value="Worcester" style="width: 200px; margin-right: 10px;">
-            <button onclick="getLocation()">LOAD LOCATION</button>
-            <button onclick="getWeather()">LOAD WEATHER</button>
-            <button onclick="getForecast()">LOAD FORECAST</button>
-            <button onclick="getPollution()">LOAD POLLUTION</button>
+            <input id="location-input" type="text" placeholder="Enter city (e.g., Boston)">
+            <button onclick="getLocation()">Load Location</button>
+            <button onclick="getWeather()">Load Weather</button>
+            <button onclick="getForecast()">Load Forecast</button>
+            <button onclick="getPollution()">Load Pollution</button>
         </div>
         <div class="controls">
             <input id="testnum" type="number" min="1" max="5" value="1">
-            <button onclick="testLocation()">TEST LOCATION</button>
-            <button onclick="testWeather()">TEST WEATHER</button>
-            <button onclick="testForecast()">TEST FORECAST</button>
-            <button onclick="testPollution()">TEST POLLUTION</button>
+            <button onclick="testLocation()">Test Location</button>
+            <button onclick="testWeather()">Test Weather</button>
+            <button onclick="testForecast()">Test Forecast</button>
+            <button onclick="testPollution()">Test Pollution</button>
         </div>
-    </div>    <button onclick="load1()">LOAD FROM example.js</button>
-    
-    <!-- Weather Chatbot Section -->
+    </div>
+
+    <button onclick="load1()">Load from Example.js</button>
+
+    <!-- Chatbot Section -->
     <div id="chatbot-section">
         <h3>🤖 Weather Chat Assistant</h3>
-          <div id="api-key-section">
+        <div id="api-key-section">
             <div class="api-key-input-group">
                 <input id="api-key-input" type="password" placeholder="Enter your Gemini API key" onkeypress="handleApiKeyPress(event)">
                 <button id="toggle-api-key" onclick="toggleApiKeyVisibility()" title="Show/Hide API Key">👁️</button>
             </div>
             <button onclick="initializeChatbot(document.getElementById('api-key-input').value)">Connect Chatbot</button>
         </div>
-        
+
         <div id="chat-container">
             <div id="chat-messages"></div>
             <div id="chat-input-container">
@@ -43,21 +50,48 @@
             </div>
         </div>
     </div>
-    
-    <h2 id="location">LOCATION</h2>
-    <p id="weather-report">WEATHER REPORT</p>
-    
+
+    <!-- Weather Cards Section -->
+    <div id="weather-card" class="card"></div>
+
+    <!-- Location and Pollution Info -->
+    <h2 id="location">Location</h2>
+    <div id="pollution-report"></div>
+
+    <!-- Forecast Table -->
     <table id="forecast-table"></table>
 
-    <p id="pollution-report">POLLUTION REPORT</p>    <script src="./OMGeocode.js"></script>
+    <!-- Scripts -->
+    <script src="./OMGeocode.js"></script>
     <script src="./OMForecast.js"></script>
     <script src="./OMWeather.js"></script>
     <script src="./OMPollution.js"></script>
     <script src="./WeatherChatbot.js"></script>
-    
+
     <script src="./display.js"></script>
     <script src="./trigger.js"></script>
-
     <script src="./example.js"></script>
+    <script>
+        const cities = ['New York', 'London', 'Tokyo', 'Paris', 'Sydney'];
+        const tickerContent = document.getElementById('ticker-content');
+      
+        async function updateTicker() {
+          let results = [];
+          for (let city of cities) {
+            try {
+              const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=YOUR_API_KEY&units=imperial`);
+              const data = await res.json();
+              results.push(`${city}: ${data.main.temp.toFixed(0)}°F ${data.weather[0].main}`);
+            } catch {
+              results.push(`${city}: N/A`);
+            }
+          }
+          tickerContent.innerHTML = results.map(text => `<span>${text}</span>`).join(' &nbsp; | &nbsp; ');
+        }
+      
+        updateTicker();
+        setInterval(updateTicker, 60000); // update every 60s
+      </script>
+      
 </body>
 </html>
