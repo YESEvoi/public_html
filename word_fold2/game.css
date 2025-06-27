@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+@keyframes rainbow-bg {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+
+@keyframes confuse {
+    0% { transform: rotate3d(0, 0, 0, 0deg) scale(1) skew(0, 0); }
+    25% { transform: rotate3d(1, 0.5, 0, 180deg) scale(1.2) skew(20deg, 0deg); }
+    50% { transform: rotate3d(0.5, 1, 0, 180deg) scale(0.8) skew(0, 20deg); }
+    100% { transform: rotate3d(1, 1, 1, 360deg) scale(1) skew(0, 0); }
+}
+
+@keyframes pulse-border {
+    0% { border-width: 8px; border-color: yellow; }
+    50% { border-width: 12px; border-color: fuchsia; }
+    100% { border-width: 8px; border-color: yellow; }
+}
+
+@keyframes screen-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+body {
+    font-family: 'DM Sans', sans-serif; /* Re-added */
+    /* Moving rainbow background */
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1800% 1800%;
+    animation: rainbow-bg 18s ease infinite;
+    display: flex; /* Use flexbox for overall layout */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center horizontally */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    overflow: hidden; /* Prevent scrollbars during rotation */
+    transition: background-color 0.5s ease; /* Smooth transition for clashing colors */
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.game-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack board vertically */
+    align-items: center; /* Center board horizontally */
+    gap: 20px; /* Space between elements inside wrapper */
+    margin-top: 20px; /* Removed scaling to lock size */ /* Re-added */
+    width: 80vw;
+    max-width: 700px;
+}
+
+.cell-holder {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    width: 100%;
+    aspect-ratio: 1/1; /* Re-added */
+    gap: 16px; /* Increased spacing between tiles */
+    /* Add perspective and skew for optical illusion */
+    perspective: 800px;
+    transform-style: preserve-3d;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em; /* Locked font size to prevent changes */
+    font-weight: bold; /* Re-added */
+    overflow-wrap: anywhere;
+    /* Also a moving rainbow */
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1800% 1800%;
+    /* Combine animations */
+    /* Keeping original animations as per context */
+    animation: rainbow-bg 10s ease infinite reverse, confuse 8s ease-in-out infinite; /* Removed scaling from cell animation */ /* Re-added */
+    transform-style: preserve-3d;
+    border-radius: 16px;
+    background-color: rgba(52, 73, 94, 0.8); /* Slightly transparent */
+    transition: all 0.2s ease-in-out; /* Smooth transitions */
+}
+
+/* Stagger animations for a confusing wave effect */
+.cell:nth-child(5n + 1) { animation-delay: 0s, -0.2s; }
+.cell:nth-child(5n + 2) { animation-delay: 0s, -0.4s; }
+.cell:nth-child(5n + 3) { animation-delay: 0s, -0.6s; }
+.cell:nth-child(5n + 4) { animation-delay: 0s, -0.8s; }
+.cell:nth-child(5n + 5) { animation-delay: 0s, -1.0s; }
+
+.cell.selected {
+    /* Make the selected cell stand out with a pulsing border */
+    background-color: #7f8c8d; /* Gray background for selected tile */
+    animation: pulse-border 1s infinite; /* Only pulse border, no rainbow or confuse */ /* Re-added */
+    transform: scale(1.05); /* Slightly enlarge selected cell, but this won't affect other cells */ /* Re-added */
+    border: 3px solid transparent; /* Add a border to make pulse-border visible */
+}
+
+.no-margin {
+    margin: 0 0;
+}
+
+#start-screen button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 1.2em; /* Larger font for buttons */
+    font-weight: bold; /* Bold text */
+    cursor: pointer;
+    background-color: #3498db; /* Blue background */
+    color: #ecf0f1; /* Light text color */
+    border: none; /* No default border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: background-color 0.2s ease; /* Smooth hover effect */
+}
+
+#get-coins-btn {
+    width: 80%; /* Make it wide */
+    max-width: 400px; /* Limit max width */
+    padding: 15px 0; /* Adjust padding for height */
+    font-size: 2em; /* Make text large */
+    font-weight: bold; /* Re-added */
+    text-align: center;
+    cursor: pointer;
+    border-radius: 15px; /* Slightly rounded corners */
+    border: 5px dashed black;
+    /* Moving rainbow background */
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1800% 1800%;
+    animation: rainbow-bg 8s ease infinite reverse; /* Re-added */
+    text-shadow: 4px 4px 8px black; /* Make the text even more prominent */ /* Re-added */
+    margin: 20px auto 10px auto; /* Add margin for spacing */ /* Re-added */
+}
+
+#start-screen button:hover, #get-coins-btn:hover { /* Re-added */
+    background-color: #2980b9;
+}
+
+#status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%; /* Re-added */
+    max-width: 700px; /* Make status bar as wide as game wrapper */ /* Re-added */
+    margin: 10px auto; /* Center it */ /* Re-added */
+    padding: 10px; /* Padding */
+    background: #34495e; /* Dark background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+#status-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#undo-btn {
+    padding: 5px 15px;
+    font-size: 0.9em;
+    cursor: pointer;
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3); /* Re-added */
+    background-size: 1800% 1800%; /* Re-added */
+    animation: rainbow-bg 12s ease infinite reverse; /* Re-added */
+    border: 2px dashed white; /* Re-added */
+    color: white; /* Re-added */
+    font-weight: bold; /* Re-added */
+    border-radius: 8px; /* Re-added */
+    transition: opacity 0.3s ease;
+}
+
+#coin-display {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#help-text {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    margin: 0 0 10px 0;
+}
+
+/* New styles for win condition */
+.found-word {
+    text-decoration: line-through;
+    color: #95a5a6; /* Lighter grey for found words */
+}
+
+#win-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top of everything */
+    color: #2ecc71; /* Green for win message */
+    font-size: 2em;
+    text-align: center;
+}
+
+#win-screen h1 {
+    font-size: 3em;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px #27ae60; /* Glow effect */
+}
+
+#win-screen button {
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    /* Inherits other button styles from #start-screen button */
+}
+
+/* --- Minesweeper Styles --- */
+
+#minesweeper-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    color: white;
+}
+
+#minesweeper-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--ms-board-size, 10), 1fr);
+    grid-template-rows: repeat(var(--ms-board-size, 10), 1fr);
+    width: 80vw;
+    max-width: 500px;
+    aspect-ratio: 1/1;
+    border: 5px solid #888;
+    background-color: #ccc;
+    gap: 1px;
+}
+
+.ms-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none; /* Prevent text selection */
+    color: black;
+}
+
+.ms-cell.hidden {
+    background-color: #bbb;
+    border-top: 3px solid #ddd;
+    border-left: 3px solid #ddd;
+    border-bottom: 3px solid #888;
+    border-right: 3px solid #888;
+}
+
+.ms-cell.hidden:active {
+    border-top: 3px solid #888;
+    border-left: 3px solid #888;
+    border-bottom: 3px solid #ddd;
+    border-right: 3px solid #ddd;
+}
+
+.ms-cell.revealed {
+    background-color: #ddd;
+    border: 1px solid #999;
+}
+
+.ms-cell.flagged {
+    font-size: 1.2em;
+}
+
+.ms-cell.mine {
+    background-color: #ff4444;
+    font-size: 1.2em;
+}
+
+/* Number colors */
+.ms-n1 { color: #0000ff; }
+.ms-n2 { color: #008200; }
+.ms-n3 { color: #ff0000; }
+.ms-n4 { color: #000084; }
+.ms-n5 { color: #840000; }
+.ms-n6 { color: #008284; }
+.ms-n7 { color: #840084; }
+.ms-n8 { color: #757575; }
+
+#ms-menu-btn {
+    /* Reuse existing button styles */
+    margin: 20px 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1800% 1800%;
+    animation: rainbow-bg 15s ease infinite;
+    border: 2px dashed black;
+    font-weight: bold;
+    color: white;
+}
+
+/* --- Clashing Colors Mode --- */
+
+.clashing-colors {
+    background: fuchsia;
+    color: cyan;
+    font-family: "Comic Sans MS", "Comic Sans", cursive; /* A classic bad font */
+}
+
+.clashing-colors .cell {
+    background: lime;
+    color: red;
+    border: 4px dotted blue;
+    text-shadow: 2px 2px yellow;
+}
+
+.clashing-colors .cell.selected {
+    background: yellow;
+    color: blue;
+    border: 8px dashed red;
+    animation: none; /* Turn off pulsing to see the awful border */
+}
+
+.clashing-colors #get-coins-btn,
+.clashing-colors #start-screen button,
+.clashing-colors #undo-btn,
+.clashing-colors #ms-menu-btn,
+.clashing-colors #win-screen button {
+    background: orange;
+    color: purple;
+    border: 3px solid green;
+    font-family: "Papyrus", fantasy;
+    animation: none; /* Turn off rainbow backgrounds */
+}
+
+.clashing-colors #status-bar {
+    background: navy;
+    color: yellow;
+    border: 5px groove red;
+}
+
+.clashing-colors #help-text {
+    color: yellow;
+    text-shadow: 2px 2px magenta;
+}
+
+.clashing-colors #win-screen {
+    background-color: rgba(0, 255, 0, 0.7); /* Sickly green overlay */
+    color: red;
+}

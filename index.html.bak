@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>home.html</title>
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="generator" content="thesitewizard.com's Layout Wizard 4.0.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="all" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="tswnavbar.css">
+  </head>
+  <body style="           font-family: cursive; background-color: #044b8d;">
+    <div id="tswcontainer" style="background-color: #044b8d;">
+      <div id="tswheader" style="background-color: #044b8d;">
+        <!-- start of header section: insert your logo, etc, here -->
+        <p>&nbsp;</p>
+        <!-- end of header section: insert your logo, etc, above this line --> </div>
+      <div id="tswcontent">
+        <div id="tswcontproper">
+          <!-- start of content column: insert your content here -->
+          <h1>Ah, Welcome!</h1>
+          <p> Welcome to my website! Here, you'll find a little about me and a
+            lot about bread because bread is cool!</p>
+          <p> I'm Evan Somasse and I love designing games and apps! I also love
+            playing my violin, I have been playing since 2017! I always try my
+            hardest in anything that I do and I'm a very chill guy! Click
+            projects to see all the stuff I work on, or you can check out the
+            bread hub to view different kinds of bread! </p>
+          <p> Thanks for checking out my site! </p>
+          <!-- end of content column: put your content above this line --> </div>
+      </div>
+      <div id="tswsidecol" style="background-color: #044b8d;">
+        <div id="tswsideproper" style="background-color: #044b8d;">
+          <!-- start of side column: insert your navigation menu, etc, here -->
+          <p style="background-color: #044b8d;">&nbsp;<img src="images/logo.png"
+              alt="epic logo" style="width: 134px; height: 134px;"></p>
+          <div id="tswcssbuttons" style="background-color: #044b8d;">
+            <ul style="background-color: #044b8d;">
+              <li style="background-color: #044b8d;"><a href="breadhub.html">Bread
+                  Hub</a></li>
+              <li style="background-color: #044b8d;"><a href="projects.html">Projects</a></li>
+              <li style="background-color: #044b8d;"><a href="evan_clicker.html">Evan
+                  Clicker</a></li>
+              <li style="background-color: #044b8d;"><a href="https://shattereddisk.github.io/rickroll/rickroll.mp4">Free
+                  Robux</a></li>
+            </ul>
+          </div>
+        </div>
+        <div style="background-color: #044b8d;"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

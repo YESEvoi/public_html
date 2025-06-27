@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Evan Clicker</title>
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="generator" content="thesitewizard.com's Layout Wizard 4.0.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="all" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="tswnavbar.css">
+    <style type="text/css">
+a {
+  font-size: larger;
+}
+/* Styles for the clicker image (now acting as a button) */
+#clickButton {
+  width: 134px; /* Set explicit width based on logo.png usage elsewhere */
+  height: 134px; /* Set explicit height based on logo.png usage elsewhere */
+  cursor: pointer;
+  margin-top: 25px;
+  /* Removed button-specific styles like padding, background-color, border, border-radius */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for visual feedback */
+  vertical-align: middle; /* Helps with alignment if text were next to it */
+}
+
+#clickButton:hover {
+  transform: translateY(-2px) scale(1.05); /* Slightly move up and enlarge on hover */
+  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.3); /* Enhance shadow on hover */
+}
+
+#clickButton:active {
+  transform: translateY(0) scale(0.98); /* Slightly shrink on click */
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2); /* Reduce shadow on click */
+}
+
+/* Ensure the image itself doesn't have default borders or padding */
+#clickButton img {
+  border: none;
+  padding: 0;
+  display: block; /* Remove extra space below image */
+}
+
+#clickCount {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+#resetButton {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #f44336; /* Red */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+#resetButton:hover {
+  background-color: #da190b;
+}
+
+.cps-test-container {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #eee;
+}
+
+.cps-test-container p {
+  font-size: 18px;
+  color: #555;
+}
+
+#startCpsTest {
+  font-size: 18px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#cpsHighScore {
+  font-size: 20px;
+  font-weight: bold;
+  color: #007bff; /* A nice blue for high score */
+}
+
+</style>
+  </head>
+  <body style="font-family: cursive; background-color: #044b8d;">
+    <div id="tswcontainer" style="background-color: #ffffff;">
+      <div id="tswcontent" style="background-color: #ffffff;">
+        <div id="tswcontproper" style="background-color: #ffffff; text-align: center;">
+          <h1>Evan Clicker</h1>
+          <p>Click the button below to increase the count!</p>
+          <p>Clicks: <span id="clickCount">0</span></p>
+          <img src="images/logo.png" alt="Click to increase count" id="clickButton">
+          <button id="resetButton">Reset Score</button>
+          <!-- CPS Test Section -->
+          <div class="cps-test-container">
+            <h2>Clicks Per Second Test</h2>
+            <p>Click the "Start" button, then click the logo as fast as you can for 5 seconds!</p>
+            <button id="startCpsTest">Start 5-Second Test</button>
+            <p>Time Left: <span id="cpsTimeLeft">5</span>s</p>
+            <p>Your CPS: <span id="cpsResult">-</span></p>
+            <p>High Score: <span id="cpsHighScore">0.00</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // --- Global Variables ---
+      // Try to load the count from localStorage, otherwise start from 0
+      let count = parseInt(localStorage.getItem('evanClickerCount')) || 0;
+      let isTestRunning = false; // Flag to control game state
+      
+      const clickButton = document.getElementById('clickButton');
+      const clickCountSpan = document.getElementById('clickCount');
+      const resetButton = document.getElementById('resetButton');
+      
+      // CPS Test Elements
+      const startCpsTestBtn = document.getElementById('startCpsTest');
+      const cpsTimeLeftSpan = document.getElementById('cpsTimeLeft');
+      const cpsResultSpan = document.getElementById('cpsResult');
+      const cpsHighScoreSpan = document.getElementById('cpsHighScore');
+      // Load CPS High Score from localStorage, default to 0.00
+      let cpsHighScore = parseFloat(localStorage.getItem('evanCpsHighScore')) || 0.00;
+
+      // --- Main Clicker Logic ---
+      function setupMainClicker() {
+        // Display the initial loaded count
+        clickCountSpan.textContent = count;
+
+        clickButton.addEventListener('click', () => {
+          if (isTestRunning) return; // Do not increment main score during test
+          
+          count++;
+          clickCountSpan.textContent = count;
+          localStorage.setItem('evanClickerCount', count);
+        });
+
+        resetButton.addEventListener('click', () => {
+          if (isTestRunning) return; // Don't allow reset during test
+          count = 0;
+          clickCountSpan.textContent = count;
+          localStorage.removeItem('evanClickerCount');
+        });
+      }
+
+      // --- CPS Test Logic ---
+      function startCpsTest() {
+        // Ensure a test isn't already running
+        if (isTestRunning) return;
+
+        isTestRunning = true; // Lock the UI
+        startCpsTestBtn.disabled = true;
+        resetButton.disabled = true; // Disable reset during test
+        cpsResultSpan.textContent = 'Get Ready...'; // Initial message
+        cpsHighScoreSpan.textContent = cpsHighScore.toFixed(2); // Display current high score
+
+        let preTestCountdown = 3;
+        cpsTimeLeftSpan.textContent = preTestCountdown;
+
+        const preTestTimer = setInterval(() => {
+          preTestCountdown--;
+          cpsTimeLeftSpan.textContent = preTestCountdown;
+
+          if (preTestCountdown <= 0) {
+            clearInterval(preTestTimer);
+            cpsResultSpan.textContent = 'Go!';
+
+            // --- Start the actual 5-second test ---
+            let testDuration = 5;
+            let clicksInTest = 0;
+            let timeLeft = testDuration;
+            cpsTimeLeftSpan.textContent = timeLeft;
+
+            const countCpsClick = () => {
+              if (isTestRunning) { clicksInTest++; }
+            };
+            clickButton.addEventListener('click', countCpsClick);
+
+            const testTimer = setInterval(() => {
+              timeLeft--;
+              cpsTimeLeftSpan.textContent = timeLeft;
+
+              if (timeLeft <= 0) {
+                clearInterval(testTimer);
+                clickButton.removeEventListener('click', countCpsClick);
+                
+                const currentCps = (clicksInTest / testDuration);
+                cpsResultSpan.textContent = currentCps.toFixed(2);
+
+                if (currentCps > cpsHighScore) {
+                  cpsHighScore = currentCps;
+                  localStorage.setItem('evanCpsHighScore', cpsHighScore);
+                  cpsHighScoreSpan.textContent = cpsHighScore.toFixed(2);
+                }
+                
+                isTestRunning = false; // End the test
+                startCpsTestBtn.disabled = false;
+                resetButton.disabled = false; // Re-enable reset
+              }
+            }, 1000);
+            }
+        }, 1000);
+      }
+
+      // --- Initialization ---
+      // Display initial high score when page loads
+      cpsHighScoreSpan.textContent = cpsHighScore.toFixed(2);
+
+      if (clickButton && clickCountSpan && resetButton && startCpsTestBtn && cpsTimeLeftSpan && cpsResultSpan && cpsHighScoreSpan) {
+        setupMainClicker(); // Setup main clicker listeners
+        startCpsTestBtn.addEventListener('click', startCpsTest); // Setup CPS test start button
+      }
+    </script>
+    <div id="tswsidecol" style="background-color: #044b8d;">
+        <div id="tswsideproper" style="background-color: #044b8d;">
+          <!-- start of side column: insert your navigation menu, etc, here -->
+          <p style="background-color: #044b8d;">&nbsp;<img src="images/logo.png"
+
+              alt="epic logo" style="width: 134px; height: 134px;"></p>
+          <div id="tswcssbuttons" style="background-color: #044b8d;">
+            <ul style="background-color: #044b8d;">
+                <li style="background-color: #044b8d;"><a href="index.html">Home</a></li>
+              <li style="background-color: #044b8d;"><a href="breadhub.html">Bread
+                  Hub</a></li>
+              <li style="background-color: #044b8d;"><a href="projects.html">Projects</a></li>
+            </ul>
+          </div>
+        </div>
+        </div>
+  </body>
+</html>

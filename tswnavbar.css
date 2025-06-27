@@ -1,0 +1,35 @@
+/*
+	tswnavbar.css	2.0.0
+	Please use the Navigation Menu Wizard at
+		https://www.thesitewizard.com/wizards/css-menu-buttons.shtml
+	to generate your own customized menu buttons.
+*/
+
+#tswcssbuttons {
+	width: 180px ;
+	max-width: 100% ;
+	text-align: center ;
+}
+#tswcssbuttons ul {
+	margin: 0 ;
+	padding: 0 ;
+	list-style: none ;
+}
+#tswcssbuttons li {
+	margin: 0 ;
+	padding: 0 ;
+	display: block ;
+	list-style: none ;
+}
+#tswcssbuttons li a {
+	color: #000000 ;
+	background-color: #ffffff ;
+	border: 1px outset #000000 ;
+	text-decoration: none ;
+	font-family: cursive; /* Apply the desired font directly to the links */
+	display: block ;
+}
+#tswcssbuttons li a:hover {
+	color: #000000 ;
+	background-color: #c0c0c0 ;
+}

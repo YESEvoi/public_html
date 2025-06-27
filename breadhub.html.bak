@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>breadhub.html</title>
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="generator" content="thesitewizard.com's Layout Wizard 4.0.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="all" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="tswnavbar.css">
+    <style type="text/css">
+a {
+  font-size: larger;
+}
+
+</style></head>
+  <body style="            font-family: cursive; background-color: #044b8d;">
+    <div id="tswcssbuttons" style="background-color: #ffffff;">
+      <ul style="background-color: #99ffff;">
+      </ul>
+    </div>
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="generator" content="thesitewizard.com's Layout Wizard 4.0.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="all" href="styles.css">
+    <div id="tswcontainer" style="background-color: #ffffff;">
+      <div id="tswcontent" style="background-color: #ffffff;">
+        <div id="tswcontproper" style="background-color: #ffffff;">
+          <!-- start of content column: insert your content here -->
+          <h1>Bread Hub</h1>
+          <p> Placeholder content. Replace everything here with your actual
+            content. </p>
+          <br>
+          <p> </p>
+          <p style="text-align: center;">&nbsp;<img src="images/sourdough.jpg" alt="sourdough bread picture"
+
+              style="width: 190px; height: 143px;"></p>
+          <p></p>
+          <p style="text-align: center;"><strong><a href="https://www.bbcgoodfood.com/howto/guide/what-sourdough"
+
+                style="color: black;">Sourdough Bread</a></strong></p>
+          <p></p>
+          <div style="text-align: center;">Sourdough is a type of bread that
+            uses a fermented starter instead of commercial yeast for leavening.
+            This starter is a mixture of flour and water that contains naturally
+            occurring wild yeast and lactic acid bacteria. Click the underlined
+            name above to learn more</div>
+          <p style="text-align: center;">&nbsp;<img src="images/baguette.png" alt="bagguette picture"
+
+              style="width: 190px; height: 143px;"></p>
+          <p></p>
+          <p style="text-align: center;"><strong><a href="https://www.britannica.com/topic/baguette-bread"
+
+                style="color: black;">Baguette</a></strong></p>
+          <p></p>
+          <div style="text-align: center;">A baguette is a long, thin loaf of
+            French bread characterized by its crisp crust and soft, airy
+            interior. It's typically made with flour, water, yeast, and salt.
+            Baguettes are a staple in French cuisine and are enjoyed in various
+            ways throughout the day. </div>
+          <p style="text-align: center;">&nbsp;<img src="images/rye.jpg" alt="rye picture"
+
+              style="width: 170px; height: 143px;"></p>
+          <p></p>
+          <p style="text-align: center;"><strong><a href="https://www.britannica.com/topic/rye-bread"
+
+                style="color: black;">Rye Bread</a></strong></p>
+          <p></p>
+          <div style="text-align: center;">Rye bread is a type of bread made
+            with flour from the rye grain, and it's known for its dense texture,
+            strong flavor, and ability to stay fresh longer than wheat bread.
+            Its flavor can range from earthy and nutty to slightly tangy,
+            depending on the type of rye flour used and any added ingredients
+            like caraway seeds.</div>
+          <p style="text-align: center;">&nbsp;<img src="images/wheat.jpg" alt="wheat bread picture"
+
+              style="width: 115px; height: 143px;"></p>
+          <p></p>
+          <p style="text-align: center;"><strong><a href="https://www.verywellfit.com/whole-wheat-bread-nutrition-facts-and-health-benefits-5069803#:%7E:text=1%20Whole%20wheat%20bread%20is,less%20processed%2C%20more%20nutritious%20bread."
+
+                style="color: black;">Wheat Bread</a></strong></p>
+          <p></p>
+          <div style="text-align: center;">Wheat bread is a type of bread made
+            with flour that includes some or all parts of the wheat kernel: the
+            bran, germ, and endosperm.</div>
+          <p style="text-align: center;">&nbsp;<img src="images/potato.jpg" alt="potato bread picture"
+
+              style="width: 224px; height: 143px;"></p>
+          <p></p>
+          <p style="text-align: center;"><strong><a href="https://en.wikipedia.org/wiki/Potato_bread"
+
+                style="color: black;">Potato Bread</a></strong></p>
+          <p></p>
+          <div style="text-align: center;">Potato bread is a type of bread where
+            a portion of the wheat flour is replaced with mashed potatoes,
+            potato flour, or dehydrated potato flakes. It often results in a
+            bread that is softer, slightly sweeter, and has a more moist texture
+            compared to regular bread.</div>
+          <p style="text-align: center;">&nbsp;<img src="images/garlic.jpg" alt="garlic bread picture"
+
+              style="width: 136px; height: 143px;"></p>
+          <p></p>
+          <p style="text-align: center;"><strong><a href="https://en.wikipedia.org/wiki/Garlic_bread"
+
+                style="color: black;">Garlic Bread</a></strong></p>
+          <p></p>
+          <div style="text-align: center;">Garlic bread is a type of bread,
+            often made with baguette or Italian loaf, that is toasted or baked
+            with a topping of garlic, butter, and often herbs like parsley.</div>
+          <p style="text-align: center;">&nbsp;<img src="images/white.jpg" alt="white bread picture"
+
+              style="width: 190px; height: 143px;"></p>
+          <p></p>
+          <p style="text-align: center;"><strong><a href="https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/white-bread#:%7E:text=Bread%20is%20manufactured%20from%20a,sugar%2C%20decreasing%20its%20nutritional%20value."
+
+                style="color: black;">White Bread</a></strong></p>
+          <p></p>
+          <div style="text-align: center;">White bread is a type of bread that
+            is typically light in color and soft in texture. It's often made
+            from refined wheat flour, meaning the bran and germ have been
+            removed during processing. This results in a lighter-colored flour
+            and a finer, less chewy crumb. White bread is a versatile staple,
+            commonly used for sandwiches, toast, and other baked goods.</div>
+          <p style="text-align: center;">&nbsp;<img src="images/whole.jpg" alt="whole grain bread picture"
+
+              style="width: 226px; height: 143px;"></p>
+          <p></p>
+          <p style="text-align: center;"><strong><a href="https://www.realsimple.com/food-recipes/cooking-tips-techniques/whole-wheat-whole-grain-breads-0"
+
+                style="color: black;">Whole Grain Bread</a></strong></p>
+          <p></p>
+          <div style="text-align: center;">Whole grain bread is bread made with
+            flour from grains that include all parts of the kernel – the bran,
+            germ, and endosperm. This contrasts with white bread, which
+            typically has the bran and germ removed. Whole grain bread is
+            considered more nutritious due to the presence of fiber, vitamins,
+            and minerals found in the bran and germ. It can be made from various
+            grains, including wheat, oats, or other whole grains.</div>
+          <p style="text-align: center;">&nbsp;<img src="images/bun.jpg" alt="bun bread picture"
+
+              style="width: 190px; height: 143px;"></p>
+          <p></p>
+          <p style="text-align: center;"><strong><a href="https://en.wikipedia.org/wiki/Bun"
+
+                style="color: black;">Bun</a></strong></p>
+          <p></p>
+          <div style="text-align: center;">A bun is a small, usually round or
+            oval, bread roll, often made from wheat flour and baked until golden
+            brown. Buns can be sweet or savory and are commonly used as
+            hamburger or hot dog buns.</div>
+          <p style="text-align: center;">&nbsp;<img src="images/veda.jpg" alt="veda bread picture"
+
+              style="width: 227px; height: 143px;"></p>
+          <p></p>
+          <p style="text-align: center;"><strong><a href="https://www.go-to-ireland.com/food/veda-bread/"
+
+                style="color: black;">Veda Bread</a></strong></p>
+          <p></p>
+          <div style="text-align: center;">Veda bread is a type of malt loaf
+            traditionally produced in the United Kingdom and Ireland, currently
+            primarily made in Northern Ireland, it's a small loaf with a caramel
+            color and a dark, rich appearance, especially when made with
+            molasses.</div>
+          <p style="text-align: center;">&nbsp;<img src="images/cinnamon.jpg" alt="cinnamon bread picture"
+
+              style="width: 124px; height: 143px;"></p>
+          <p></p>
+          <p style="text-align: center;"><strong><a href="https://www.snapcalorie.com/nutrition/cinnamon_bread_nutrition.html"
+
+                style="color: black;">Cinnamon Bread</a></strong></p>
+          <p></p>
+          <div style="text-align: center;">Cinnamon bread is a sweet, soft, and
+            fragrant bread characterized by a swirl of cinnamon and sugar within
+            its dough, often with a cinnamon sugar topping.</div>
+          <p style="text-align: center;">&nbsp;<img src="images/french.jpg" alt="french bread picture"
+
+              style="width: 190px; height: 143px;"></p>
+          <p></p>
+          <p style="text-align: center;"><strong><a href="https://everydayfoodblog.com/france/french-baguette-facts/"
+
+                style="color: black;">French Bread</a></strong></p>
+          <p></p>
+          <div style="text-align: center;">French bread refers to a variety of
+            long, narrow, crusty loaves made with a basic dough of flour, water,
+            yeast, and salt. It's known for its crisp crust and soft interior,
+            and comes in different shapes like baguettes, batards, and boules.</div>
+          <p style="text-align: center;">&nbsp;<img src="images/honey.jpg" alt="honey bread picture"
+
+              style="width: 178px; height: 143px;"></p>
+          <p></p>
+          <p style="text-align: center;"><strong><a href="https://mygerman.recipes/honey-bread/"
+
+                style="color: black;">Honey Bread</a></strong></p>
+          <p></p>
+          <div style="text-align: center;">Honey bread is a type of bread that
+            is sweetened with honey, offering a subtle sweetness and often a
+            slightly richer flavor than plain bread.</div>
+          <p style="text-align: center;">&nbsp;<img src="images/purple.jpg" alt="purple bread picture"
+
+              style="width: 223px; height: 143px;"></p>
+          <p></p>
+          <p style="text-align: center;"><strong><a href="https://www.cnn.com/2016/03/17/health/purple-bread"
+
+                style="color: black;">Purple Bread</a></strong></p>
+          <p></p>
+          <div style="text-align: center;">Purple bread is typically made by
+            incorporating purple-fleshed sweet potatoes or ube (purple yam) into
+            the dough, which gives it a vibrant purple color and a slightly
+            sweet, nutty flavor</div>
+          <p style="text-align: center;">&nbsp;<img src="images/sesame.jpg" alt="sesame bread picture"
+
+              style="width: 150px; height: 143px;"></p>
+          <p></p>
+          <p style="text-align: center;"><strong><a href="https://www.snapcalorie.com/nutrition/sesame_bread_nutrition.html"
+
+                style="color: black;">Sesame Bread</a></strong></p>
+          <p></p>
+          <div style="text-align: center;">Sesame bread is a type of bread that
+            incorporates sesame seeds, either sprinkled on top of the crust
+            before baking, mixed into the dough, or both.</div>
+          <p style="text-align: center;">&nbsp;<img src="images/banana.jpg" alt="banana bread picture"
+
+              style="width: 117px; height: 143px;"></p>
+          <p></p>
+          <p style="text-align: center;"><strong><a href="https://en.wikipedia.org/wiki/Banana_bread"
+
+                style="color: black;">Banana Bread</a></strong></p>
+          <p></p>
+          <div style="text-align: center;">Banana bread is a sweet, moist quick
+            bread or cake made with mashed bananas as a primary ingredient. It
+            often features a soft, tender crumb and a sweet, banana-forward
+            flavor, sometimes with hints of brown sugar and cinnamon. </div>
+          <p style="text-align: center;">&nbsp;<img src="images/raisin.jpg" alt="raisin bread picture"
+
+              style="width: 190px; height: 143px;"></p>
+          <p></p>
+          <p style="text-align: center;"><strong><a href="https://en.wikipedia.org/wiki/Raisin_bread"
+
+                style="color: black;">Raisin Bread</a></strong></p>
+          <p></p>
+          <div style="text-align: center;">Raisin bread is a type of sweet bread
+            characterized by the inclusion of raisins and often flavored with
+            cinnamon. It's typically made with a white or egg dough base, but
+            can also incorporate other flours like all-purpose, oat, or whole
+            wheat. The texture can range from chewy and dense to soft and moist,
+            depending on the recipe.</div>
+          <p style="text-align: center;">&nbsp;<img src="images/corn.jpg" alt="corn bread picture"
+
+              style="width: 190px; height: 143px;"></p>
+          <p></p>
+          <p style="text-align: center;"><strong><a href="https://en.wikipedia.org/wiki/Cornbread"
+
+                style="color: black;">Cornbread<br>
+              </a></strong></p>
+          <p></p>
+          <div style="text-align: center;">Cornbread is a quick bread made with
+            cornmeal, a type of flour made from ground dried corn. It's a
+            popular dish, especially in the Southern United States, and has
+            origins in Native American cuisine. Cornbread can be made in various
+            ways, but it typically includes cornmeal, flour, milk or buttermilk,
+            eggs, and a leavening agent like baking powder.</div>
+        </div>
+      </div>
+    </div>
+    <div id="tswsidecol" style="background-color: #044b8d;">
+      <div id="tswsideproper" style="background-color: #044b8d;">
+        <!-- start of side column: insert your navigation menu, etc, here -->
+        <p style="background-color: #044b8d;">&nbsp;<img src="images/logo.png" alt="epic logo"
+
+            style="width: 134px; height: 134px;"></p>
+        <div id="tswcssbuttons" style="background-color: #044b8d;">
+          <ul style="background-color: #044b8d;">
+            <li style="background-color: #044b8d;"><a href="index.html">Home</a></li>
+            <li style="background-color: #044b8d;"><a href="projects.html">Projects</a></li>
+            <li style="background-color: #044b8d;"><a href="evan_clicker.html">Evan Clicker</a></li>
+ c
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
